@@ -1,0 +1,4 @@
+city = Brooklyn
+country = United States of America
+state = New York
+method = 2
