@@ -5,9 +5,9 @@ const readUserData = require('./readUserData');
 module.exports = async () => {
     const userdata = readUserData();
     const params = encode(userdata);
-    const { data } = await axios.get(`https://api.aladhan.com/v1/timingsByCity/?${params}`)
-    if(data.code === "200"){
-        let data2 = data.data;
+    console.log(`https://api.aladhan.com/v1/timingsByCity?${params}`);
+    const { data } = await axios.get(`https://api.aladhan.com/v1/timingsByCity?${params}`)
+    if(data.code === 200){
         return data.data;    
     } else {
         throw new Error(`Code:${data.code}\nStatus:${data.status}`);
